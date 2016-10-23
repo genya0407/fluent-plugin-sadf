@@ -28,6 +28,16 @@ output
 
     sadf.tag: {"hostname":"note","args":"-A","all":{"%usr":"26.14","%nice":"0.00","%sys":"7.95","%iowait":"1.96","%steal":"0.00","%irq":"0.00","%soft":"0.00","%guest":"0.00","%gnice":"0.00","%idle":"63.94"},"cpu0":{"%usr":"21.40","%nice":"0.00","%sys":"8.73","%iowait":"3.93","%steal":"0.00","%irq":"0.00","%soft":"0.00","%guest":"0.00","%gnice":"0.00","%idle":"65.94"},"cpu1":{"%usr":"35.81","%nice":"0.00","%sys":"9.61","%iowait":"2.18","%steal":"0.00","%irq":"0.00","%soft":"0.00","%guest":"0.00","%gnice":"0.00","%idle":"52.40"},"cpu2":{"%usr":"21.40","%nice":"0.00","%sys":"6.55","%iowait":"1.75","%steal":"0.00","%irq":"0.00","%soft":"0.00","%guest":"0.00","%gnice":"0.00","%idle":"70.31"},"cpu3":{"%usr":"25.97","%nice":"0.00","%sys":"6.93","%iowait":"0.00","%steal":"0.00","%irq":"0.00","%soft":"0.00","%guest":"0.00","%gnice":"0.00","%idle":"67.10"}}
 
+## Change
+
+### 0.0.2
+
+fix bug (this could not collect latest performances. (this plugin was collecting OLDEST performances.))
+
+### 0.0.1
+
+first version
+
 ## Copyright
 
 Copyright (c) 2016 Yuji Hagiwara. See [LICENSE](LICENSE.txt) for details.

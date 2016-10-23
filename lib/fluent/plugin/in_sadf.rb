@@ -1,3 +1,5 @@
+require 'tempfile'
+
 class SadfInput < Fluent::Input
     Fluent::Plugin.register_input('sadf', self)
 
@@ -41,12 +43,15 @@ class SadfInput < Fluent::Input
     def sadf_execute(opt)
         rec = Hash.new
 
-        `LANG=C sadf -- #{opt} 1 1`.split("\n").each {| line |
-            array = line.split("\t")
-            if !rec.has_key?(array[3]) then
-              rec[array[3]] = Hash.new
-            end
-            rec[array[3]][array[4]] = array[5]
+        Tempfile.open('sar') {|tmpfile|
+            `LANG=C sar -o #{tmpfile.path} 1 1`
+            `LANG=C sadf -- #{opt} 1 1 #{tmpfile.path}`.split("\n").each {| line |
+                array = line.split("\t")
+                if !rec.has_key?(array[3]) then
+                    rec[array[3]] = Hash.new
+                end
+                rec[array[3]][array[4]] = array[5]
+            }
         }
 
         rec
