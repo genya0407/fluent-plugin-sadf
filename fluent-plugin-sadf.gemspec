@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.executables   = `git ls-files -- bin/*`.split("\n").map{| f | File.basename(f)}
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'fluentd', "~> 0.10"
+  spec.add_dependency 'fluentd', "~> 1.2"
   spec.add_development_dependency "rake", ">0"
   spec.add_development_dependency "rspec", ">0"
 end
